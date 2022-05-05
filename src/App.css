@@ -1,38 +1,210 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
+
+:root{
+  --black: #26292e;
+  --grey: #565d67;
+  --orange: #e58947;
+  --orangeLight: #fab685;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background: var(--black);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App{
+  background: var(--grey);
+  width: 400px;
+  height: 95vh;
+  margin: 20px auto 20px auto;
+  border-radius: 40px;
+  padding: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main{
+  width: 380px;
+  height: 65%;
+  background: var(--orange);
+  border-radius: 35px 35px 35px 400px / 35px 35px 35px 249px;;
+  margin: 5px auto 0 auto;
+  padding: 10px;
+  box-shadow:
+    0px 0.9px 1.8px rgba(0, 0, 0, 0.048),
+    0px 3.1px 6px rgba(0, 0, 0, 0.072),
+    0px 14px 27px rgba(0, 0, 0, 0.12);
+
+}
+.header{
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+}
+.containerLogo{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--grey);
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  box-shadow:
+    0px 0.9px 1.8px rgba(0, 0, 0, 0.048),
+    0px 3.1px 6px rgba(0, 0, 0, 0.072),
+    0px 14px 27px rgba(0, 0, 0, 0.12);
+}
+.logotipo{
+  width: 100px;
+}
+.title{
+  width: 220px;
+  text-align: center;
+  color: var(--black);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+}
+.containerForm{
+  margin-top: 20px;
+}
+.label{
+  font-size: 12px;
+}
+.form-title{
+  font-family: 'Montserrat', sans-serif;
+}
+.form-input[type=text]{
+  background: var(--orangeLight);
+  border-style: none;
+  border-radius: 10px;
+  padding: 5px;
+  display: block;
+}
+.form-input[type=text]:focus{
+  border-style: none;
+  outline: transparent;
+}
+.form-input[type=checkbox]{
+  background: var(--orangeLight);
+  display: block;
+  margin-top: 6px;
+}
+.btn-calculator{
+  background: var(--orangeLight);
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  color: var(--grey);  
+  cursor: pointer;
+}
+.btn-calculator:hover{
+  box-shadow: none;
+  transform: scale(1.02);
+  box-shadow:
+  0px 0.9px 1.8px rgba(0, 0, 0, 0.048),
+  0px 3.1px 6px rgba(0, 0, 0, 0.072),
+  0px 14px 27px rgba(0, 0, 0, 0.12);
+}
+.resultado{
+  margin-left: 10px;
+  color: rgb(209, 205, 205);
 }
 
-.App-link {
-  color: #61dafb;
+/* CHECKBOX STYLE */
+/* From uiverse.io by @mobinkakei */
+.toggler {
+  width: 72px;
+  margin: 6px auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.toggler input {
+  display: none;
+}
+
+.toggler label {
+  display: block;
+  position: relative;
+  width: 36px;
+  height: 18px;
+  border: 1px solid  var(--black);
+  border-radius: 36px;
+  background: var(--black);
+  cursor: pointer;
+}
+
+.toggler label::after {
+  display: block;
+  border-radius: 100%;
+  background-color: #730316;
+  content: '';
+  animation-name: toggler-size;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-out;
+  animation-direction: forwards;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+}
+
+.toggler label::after, .toggler label .toggler-on, .toggler label .toggler-off {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  width: 15px;
+  height: 15px;
+  transform: translateY(-50%) translateX(-50%);
+  transition: left 0.15s ease-in-out, background-color 0.2s ease-out, width 0.15s ease-in-out, height 0.15s ease-in-out, opacity 0.15s ease-in-out;
+}
+
+.toggler input:checked + label::after, .toggler input:checked + label .toggler-on, .toggler input:checked + label .toggler-off {
+  left: 75%;
+}
+
+.toggler input:checked + label::after {
+  background-color: #255f2d;
+  animation-name: toggler-size2;
+}
+
+.toggler .toggler-on, .toggler .toggler-off {
+  opacity: 1;
+  z-index: 2;
+}
+
+.toggler input:checked + label .toggler-off, .toggler input:not(:checked) + label .toggler-on {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.toggler .path {
+  fill: none;
+  stroke: #fefefe;
+  stroke-width: 7px;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+}
+
+@keyframes toggler-size {
+  0%, 100% {
+    width: 26px;
+    height: 26px;
   }
-  to {
-    transform: rotate(360deg);
+
+  50% {
+    width: 20px;
+    height: 20px;
   }
 }
+
+@keyframes toggler-size2 {
+  0%, 100% {
+    width: 26px;
+    height: 26px;
+  }
+
+  50% {
+    width: 20px;
+    height: 20px;
+  }
+}
+ 
