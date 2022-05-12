@@ -14,7 +14,7 @@ body{
 .App{
   background: var(--grey);
   width: 400px;
-  height: 95vh;
+  min-height: 650px;
   margin: 20px auto 20px auto;
   border-radius: 40px;
   padding: 10px;
@@ -22,7 +22,7 @@ body{
 
 .main{
   width: 380px;
-  height: 65%;
+  min-height: 589px;
   background: var(--orange);
   border-radius: 35px 35px 35px 400px / 35px 35px 35px 249px;;
   margin: 5px auto 0 auto;
